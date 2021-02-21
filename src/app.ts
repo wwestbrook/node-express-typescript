@@ -2,18 +2,17 @@
 // fs.writeFileSync('_hello.txt', 'hello from node.js!');
 // import * as http from 'http';
 import express from 'express';
+import bodyParser from 'body-parser';
+import adminRouter from './routes/admin';
+import shopRouter from './routes/shop';
 
 const app = express();
-app.use('/add-product', (req, res) => {
-	res.send('<h1>Add Product Page.</h1>');
-});
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(adminRouter);
+app.use(shopRouter);
 
-app.use('/', (req, res) => {
-	res.send('<h1>Express / Node / Typescript default route.</h1>');
+app.use((req, res) => {
+	res.status(404).send('<h2>Page Not Found - 404</h2>');
 });
-
-// app.get('/', (req, res) => {
-// 	res.send('Hello World');
-// });
 
 app.listen(3000);
