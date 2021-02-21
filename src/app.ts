@@ -1,11 +1,19 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 // import * as fs from 'fs';
 // fs.writeFileSync('_hello.txt', 'hello from node.js!');
+// import * as http from 'http';
+import express from 'express';
 
-import * as http from 'http';
-import requestHandler from './routes';
+const app = express();
+app.use('/add-product', (req, res) => {
+	res.send('<h1>Add Product Page.</h1>');
+});
 
-console.log(requestHandler);
-const server = http.createServer(requestHandler);
+app.use('/', (req, res) => {
+	res.send('<h1>Express / Node / Typescript default route.</h1>');
+});
 
-server.listen(3000);
+// app.get('/', (req, res) => {
+// 	res.send('Hello World');
+// });
+
+app.listen(3000);
