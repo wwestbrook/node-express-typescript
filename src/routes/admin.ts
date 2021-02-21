@@ -1,11 +1,14 @@
 import express from 'express';
+import path from 'path';
+import rootDir from '../utils/path';
 
 const router = express.Router();
-router.get('/add-product', (req, res) => {
-	res.send('<form action="/product" method="POST"><input type="text" name="title"/><button type="submit">Submit</button></form>');
+router.get('/products', (req, res) => {
+	console.log(rootDir);
+	res.sendFile(path.join(rootDir, 'src', 'views', 'product.html'));
 });
 
-router.post('/product', (req, res) => {
+router.post('/products', (req, res) => {
 	console.log(req.body);
 	res.redirect('/');
 });
