@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wwestbrook/udemy-node-typescript.git"
+    "url": "git+https://github.com/wwestbrook/node-typescript.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wwestbrook/udemy-node-typescript/issues"
+    "url": "https://github.com/wwestbrook/node-typescript/issues"
   },
-  "homepage": "https://github.com/wwestbrook/udemy-node-typescript#readme",
+  "homepage": "https://github.com/wwestbrook/node-typescript#readme",
   "devDependencies": {
     "@types/node": "^14.14.30",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
