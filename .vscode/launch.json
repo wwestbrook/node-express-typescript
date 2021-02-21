@@ -12,6 +12,7 @@
             "trace": "all",
             "restart": true,
             "runtimeExecutable": "nodemon",
+            "console":"integratedTerminal",
             "program": "${workspaceFolder}\\src\\app.ts",
             "outFiles": [
                 "${workspaceFolder}/bin/*.js"
