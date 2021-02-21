@@ -1,6 +1,3 @@
-// import * as fs from 'fs';
-// fs.writeFileSync('_hello.txt', 'hello from node.js!');
-// import * as http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
@@ -9,6 +6,10 @@ import shopRouter from './routes/shop';
 import rootDir from './utils/path';
 
 const app = express();
+// pug config
+app.set('view engine', 'pug');
+app.set('views', 'views');
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
