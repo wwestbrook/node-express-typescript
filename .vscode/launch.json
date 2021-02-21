@@ -10,6 +10,8 @@
             "name": "Node - TS",
             "sourceMaps": true,
             "trace": "all",
+            "restart": true,
+            "runtimeExecutable": "nodemon",
             "program": "${workspaceFolder}\\src\\app.ts",
             "outFiles": [
                 "${workspaceFolder}/bin/*.js"

@@ -22,7 +22,6 @@ const requestHandler = (req: http.IncomingMessage, res: http.ServerResponse): vo
 		});
 		return req.on('end', () => {
 			const parsedBody = Buffer.concat(body).toString();
-			// console.log(parsedBody);
 			fs.writeFile('_message.txt', parsedBody.split('=')[1], (error) => {
 				if (error) {
 					console.log(error);
