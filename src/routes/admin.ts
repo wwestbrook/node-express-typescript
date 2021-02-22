@@ -1,12 +1,11 @@
 import express from 'express';
-// import path from 'path';
-// import rootDir from '../utils/path';
+import path from 'path';
+import rootDir from '../utils/path';
 import products from '../mocks/mock-products';
 
 const router = express.Router();
 router.get('/products', (req, res) => {
-	// res.sendFile(path.join(rootDir, 'src', 'views', 'product.html'));
-	res.render('product.pug', { docTitle: 'Pug-Based Add Item', isProductPath: true });
+	res.sendFile(path.join(rootDir, 'src', 'views', 'product.html'));
 });
 
 router.post('/products', (req, res) => {
