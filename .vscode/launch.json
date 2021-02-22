@@ -15,7 +15,7 @@
             "console":"integratedTerminal",
             "program": "${workspaceFolder}\\src\\app.ts",
             "outFiles": [
-                "${workspaceFolder}/bin/*.js"
+                "${workspaceFolder}/bin/**/*.js"
             ]
         }
     ]

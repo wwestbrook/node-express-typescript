@@ -8,7 +8,7 @@ import rootDir from './utils/path';
 const app = express();
 // pug config
 app.set('view engine', 'pug');
-app.set('views', 'views');
+app.set('views', 'src/views');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '..', 'public')));
