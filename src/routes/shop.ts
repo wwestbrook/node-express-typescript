@@ -6,8 +6,7 @@ import products from '../mocks/mock-products';
 const router = express.Router();
 router.get('/', (req, res) => {
 	// res.sendFile(path.join(rootDir, 'src', 'views', 'shop.html'));
-	console.log(products);
-	res.render('shop.pug', { products, docTitle: 'Pug-Based Item Shop' });
+	res.render('shop.pug', { products, docTitle: 'Pug-Based Item Shop', isShopPath: true });
 });
 
 export default router;

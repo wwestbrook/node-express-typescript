@@ -17,7 +17,8 @@ app.use('/admin', adminRouter);
 app.use(shopRouter);
 
 app.use((req, res) => {
-	res.status(404).sendFile(path.join(rootDir, 'src', 'views', '404.html'));
+	// res.status(404).sendFile(path.join(rootDir, 'src', 'views', '404.html'));
+	res.render('404.pug', { docTitle: 'Pug-Based 404 Page' });
 });
 
 app.listen(3000);
