@@ -1,7 +1,7 @@
 {
   "name": "udemy-node-typescript",
   "version": "1.0.0",
-  "description": "udemy node es6 class done in typescript",
+  "description": "udemy node es6 class as inspiration but done in typescript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
