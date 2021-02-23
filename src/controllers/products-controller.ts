@@ -3,12 +3,14 @@ import Product from '../models/product';
 import * as service from '../services/product-service'
 
 export function getProductList(req: Request, res: Response, next: NextFunction): void {
-	res.render('item-list', {
-		pageTitle: 'List of Items',
-		products: service.get(),
-		listItemClass: 'active',
-		addItemClass: ''
-	});
+	service.get((data: Product[]) => {
+		res.render('item-list', {
+			pageTitle: 'List of Items',
+			products: data,
+			listItemClass: 'active',
+			addItemClass: ''
+		});
+	})
 }
 
 export function getAddProduct(req: Request, res: Response, next: NextFunction): void {

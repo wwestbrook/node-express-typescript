@@ -14,7 +14,7 @@ export function add(item: ProductModel): void {
     // })
   })
 }
-export function get(): ProductModel[] {
+export function get(callback: Function): ProductModel[] {
   const products: ProductModel[] = [];
   const p = path.join(path.dirname(getPath()), '..', 'src', 'data', 'products.json');
   fs.readFile(p, (error, data) => {
@@ -27,6 +27,7 @@ export function get(): ProductModel[] {
     } else {
       console.log(error);
     }
+    callback(products);
   })
   console.log('outside, should be last');
   return products;
