@@ -1,14 +1,7 @@
 import express from 'express';
-import products from '../mocks/mock-products';
+import * as productsController from '../controllers/products-controller';
 
 const router = express.Router();
-router.get('/', (req, res) => {
-	res.render('item-list', {
-		pageTitle: 'List of Items',
-		products,
-		listItemClass: 'active',
-		addItemClass: ''
-	});
-});
+router.get('/',	productsController.getProductList);
 
 export default router;

@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import adminRouter from './routes/admin';
 import itemsRouter from './routes/items';
+import * as errorController from './controllers/error-controller';
 
 const app = express();
 
@@ -16,8 +17,6 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/admin', adminRouter);
 app.use(itemsRouter);
 
-app.use((req, res) => {
-	res.status(404).render('404', { pageTitle: '404 Invalid Page', addItemClass: '', listItemClass: '' });
-});
+app.use(errorController.get404Error);
 
 app.listen(3000);

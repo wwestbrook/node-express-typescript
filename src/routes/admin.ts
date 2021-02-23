@@ -1,19 +1,10 @@
 import express from 'express';
-import products from '../mocks/mock-products';
+import * as productsController from '../controllers/products-controller';
 
 const router = express.Router();
-router.get('/add-item', (req, res) => {
-	res.render('add-item', { pageTitle: 'Add an Item', addItemClass: 'active', listItemClass: '' });
-});
 
-router.post('/add-item', (req, res) => {
-	products.push({
-		title: req.body.title,
-		price: req.body.price,
-		description: req.body.description,
-		imgUrl: req.body.imgUrl
-	});
-	res.redirect('/');
-});
+router.get('/add-item',	productsController.getAddProduct);
+
+router.post('/add-item', productsController.postAddProduct);
 
 export default router;

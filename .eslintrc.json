@@ -20,6 +20,8 @@
 	"plugins": ["@typescript-eslint"],
 	"rules": {
 		"max-len": ["error", { "code": 120, "tabWidth": 2 }],
+		"class-methods-use-this": ["error", "never"],
+		"lines-between-class-members": ["error", "never"],
 		"quotes": ["error", "single"],
 		"linebreak-style": ["error", "windows"],
 		"comma-dangle": ["error", "never"],
@@ -30,7 +32,7 @@
 		"no-unused-vars": "off",
 		"@typescript-eslint/no-unused-vars": ["error"],
 		"no-useless-constructor": "off",
-  		"@typescript-eslint/no-useless-constructor": ["error"],
+  	"@typescript-eslint/no-useless-constructor": ["error"],
 		"import/extensions": [
 			"error",
 			{
