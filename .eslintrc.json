@@ -19,6 +19,7 @@
 	},
 	"plugins": ["@typescript-eslint"],
 	"rules": {
+		"max-len": ["error", { "code": 120, "tabWidth": 2 }],
 		"quotes": ["error", "single"],
 		"linebreak-style": ["error", "windows"],
 		"comma-dangle": ["error", "never"],
