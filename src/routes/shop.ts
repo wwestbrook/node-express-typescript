@@ -5,7 +5,7 @@ import rootDir from '../utils/path';
 
 const router = express.Router();
 router.get('/', (req, res) => {
-	res.sendFile(path.join(rootDir, 'src', 'views', 'shop.html'));
+	res.sendFile(path.join(rootDir, 'src', 'views', 'item-list.html'));
 });
 
 export default router;
