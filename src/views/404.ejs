@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title><%= pageTitle %> </title>
-	</head>
-	<body>
-		<header class="main-header">
-			<nav class="main-header__nav">
-				<ul class="main-header__item-list">
-					<li class="main-header__item"><a href="/">Items</a></li>
-					<li class="main-header__item"><a href="/admin/add-item">Add an Item</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<h2><%= pageTitle %> </h2>
-		</main>
-		<link rel="stylesheet" href="/css/site.css" />
-	</body>
-</html>
+<%- include('partials/doc-header.ejs') %>
+<%- include('partials/menu.ejs') %> 
+<main>
+	<h2><%= pageTitle %> </h2>
+</main>
+<%- include('partials/doc-end.ejs') %> 

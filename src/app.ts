@@ -17,7 +17,7 @@ app.use('/admin', adminRouter);
 app.use(itemsRouter);
 
 app.use((req, res) => {
-	res.status(404).render('404', { pageTitle: '404 Invalid Page' });
+	res.status(404).render('404', { pageTitle: '404 Invalid Page', addItemClass: '', listItemClass: '' });
 });
 
 app.listen(3000);

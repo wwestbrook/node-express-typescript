@@ -5,7 +5,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
 	res.render('item-list', {
 		pageTitle: 'List of Items',
-		products
+		products,
+		listItemClass: 'active',
+		addItemClass: ''
 	});
 });
 

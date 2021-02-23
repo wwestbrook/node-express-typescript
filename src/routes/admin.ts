@@ -3,7 +3,7 @@ import products from '../mocks/mock-products';
 
 const router = express.Router();
 router.get('/add-item', (req, res) => {
-	res.render('add-item', { pageTitle: 'Add an Item' });
+	res.render('add-item', { pageTitle: 'Add an Item', addItemClass: 'active', listItemClass: '' });
 });
 
 router.post('/add-item', (req, res) => {
