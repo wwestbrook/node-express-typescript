@@ -3,11 +3,12 @@ import * as http from 'http';
 
 // eslint-disable-next-line max-len
 const requestHandler = (req: http.IncomingMessage, res: http.ServerResponse): void | http.IncomingMessage => {
-	const { url, method } = req;
+	const {url, method} = req;
 	if (url === '/') {
 		res.write('<html>');
 		res.write('<head><title>Input Page</title></head>');
 		res.write(
+			// eslint-disable-next-line max-len
 			'<body><form action="/message" method="POST"><input type="text" name="message"/><button type="submit">Submit</button></form></body>'
 		);
 		res.write('</html>');

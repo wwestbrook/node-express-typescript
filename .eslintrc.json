@@ -11,34 +11,88 @@
 		"es2021": true,
 		"node": true
 	},
-	"extends": ["airbnb-base", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
+	"extends": ["plugin:@typescript-eslint/recommended"],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
-		"ecmaVersion": 12,
-		"sourceType": "module"
+		"ecmaVersion": 2020,
+		"sourceType": "module",
+		"project": "./tsconfig.json"
 	},
 	"plugins": ["@typescript-eslint"],
 	"rules": {
-		"max-len": ["error", { "code": 120, "tabWidth": 2 }],
-		"class-methods-use-this": ["error", "never"],
-		"lines-between-class-members": ["error", "never"],
-		"quotes": ["error", "single"],
-		"linebreak-style": ["error", "windows"],
-		"comma-dangle": ["error", "never"],
-		"no-tabs": 0,
-		"indent": ["error", "tab"],
-		"no-shadow": "off",
-		"@typescript-eslint/no-shadow": ["error"],
+		"@typescript-eslint/ban-types": "off",
+		"comma-dangle": "off",
+		"@typescript-eslint/comma-dangle": ["error"],
+		"semi": "off",
+		"@typescript-eslint/semi": ["error"],
+		"@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
+		"@typescript-eslint/no-misused-promises": ["error"],
+		"no-extra-parens": "off",
+		"@typescript-eslint/no-extra-parens": ["error"],
 		"no-unused-vars": "off",
 		"@typescript-eslint/no-unused-vars": ["error"],
-		"no-useless-constructor": "off",
-  	"@typescript-eslint/no-useless-constructor": ["error"],
-		"import/extensions": [
+		"eqeqeq": ["error", "always", { "null": "ignore" }],
+		"no-alert": "warn",
+		"no-console": "warn",
+		"space-infix-ops": "off",
+  	"@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }],
+		// STYLE OPTIONS
+		"array-bracket-newline": ["off", "consistent"],
+		"array-element-newline": ["off", { "multiline": true, "minItems": 3 }],
+		"array-bracket-spacing": ["error", "never"],
+		"brace-style": "off",
+		"@typescript-eslint/brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+		"camelcase": "off",
+		"@typescript-eslint/naming-convention": [
 			"error",
 			{
-				"js": "never",
-				"ts": "never"
+				"selector": "default",
+				"format": ["camelCase"]
+			},
+
+			{
+				"selector": "variable",
+				"format": ["camelCase", "UPPER_CASE"]
+			},
+			{
+				"selector": "parameter",
+				"format": ["camelCase"],
+				"leadingUnderscore": "allow"
+			},
+
+			{
+				"selector": "memberLike",
+				"modifiers": ["private"],
+				"format": ["camelCase"],
+				"leadingUnderscore": "require"
+			},
+
+			{
+				"selector": "typeLike",
+				"format": ["PascalCase"]
 			}
-		]
+		],
+		"keyword-spacing": "off",
+		"@typescript-eslint/keyword-spacing": ["error"],
+		"max-len": ["error", { "code": 120, "tabWidth": 2 }],
+		"quotes": "off",
+		"@typescript-eslint/quotes": ["error", "single", { "avoidEscape": true }],
+		// note you must disable the base rule as it can report incorrect errors
+		"object-curly-spacing": "off",
+		"@typescript-eslint/object-curly-spacing": ["error"]
+		// "max-len": ["error", { "code": 120, "tabWidth": 2 }],
+		// "class-methods-use-this": ["error", "never"],
+		// "lines-between-class-members": ["error", "never"],
+		// "quotes": ["error", "single"],
+		// "linebreak-style": ["error", "windows"],
+		// "comma-dangle": ["error", "never"],
+		// "no-tabs": 0,
+		// "indent": ["error", "tab"],
+		// "no-shadow": "off",
+		// "@typescript-eslint/no-shadow": ["error"],
+		// "no-unused-vars": "off",
+		// "@typescript-eslint/no-unused-vars": ["error"],
+		// "no-useless-constructor": "off",
+		// "@typescript-eslint/no-useless-constructor": ["error"],
 	}
 }
