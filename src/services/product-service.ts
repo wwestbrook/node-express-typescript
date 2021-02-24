@@ -3,18 +3,30 @@ import path from 'path';
 import ProductModel from '../models/product';
 
 export function add(item: ProductModel): void {
-  const p = path.join(path.dirname(getPath()), '..', 'src', 'data', 'products.json');
-  fs.readFile(p, (error, data) => {
-    if (!error) {
-      //products = JSON.parse(data.toString());
-    }
-    // products.push(item);
+  readFile((products: ProductModel[]) => {
+    products.push(item);
+    const p = path.join(path.dirname(getPath()), '..', 'src', 'data', 'products.json');
+    fs.writeFile(p, JSON.stringify(products), (error) => {
+      console.log(error);
+    })
+  });
+  // const products: ProductModel[] = [];
+  // const p = path.join(path.dirname(getPath()), '..', 'src', 'data', 'products.json');
+  // fs.readFile(p, (error, data) => {
+  //   if (!error) {
+  //     products = JSON.parse(data.toString());
+  //   }
+  //   // products.push(item);
     // fs.writeFile(p, JSON.stringify(products), (error) => {
     //   console.log(error);
     // })
-  })
+  // })
 }
 export function get(callback: Function): ProductModel[] {
+ return readFile(callback);
+}
+
+function readFile(callback: Function): ProductModel[] {
   const products: ProductModel[] = [];
   const p = path.join(path.dirname(getPath()), '..', 'src', 'data', 'products.json');
   fs.readFile(p, (error, data) => {
@@ -23,13 +35,11 @@ export function get(callback: Function): ProductModel[] {
       jsonProducts.forEach((x: { title: string; price: number; description: string; imgUrl: string; }) => {
         products.push(new ProductModel(x.title, x.price, x.description, x.imgUrl));
       });
-      console.log('inside, should be first');
     } else {
       console.log(error);
     }
     callback(products);
   })
-  console.log('outside, should be last');
   return products;
 }
 function getPath(): string {
