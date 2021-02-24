@@ -25,6 +25,7 @@ const requestHandler = (req: http.IncomingMessage, res: http.ServerResponse): vo
 			const parsedBody = Buffer.concat(body).toString();
 			fs.writeFile('_message.txt', parsedBody.split('=')[1], (error) => {
 				if (error) {
+					// eslint-disable-next-line no-console
 					console.log(error);
 					return;
 				}
