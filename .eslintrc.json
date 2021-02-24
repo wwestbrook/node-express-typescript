@@ -27,6 +27,7 @@
 		"comma-dangle": "off",
 		"keyword-spacing": "off",
 		"no-extra-parens": "off",
+		"no-shadow": "off",
 		"no-unused-vars": "off",
 		"object-curly-spacing": "off",
 		"quotes": "off",
@@ -34,15 +35,16 @@
 		"space-infix-ops": "off",
 
 		// TYPESCRIPT RULES
-		"@typescript-eslint/ban-types": "off",
-		"@typescript-eslint/semi": ["error"],
-		"@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
-		"@typescript-eslint/no-misused-promises": ["error"],
-		"@typescript-eslint/no-extra-parens": ["error"],
-		"@typescript-eslint/no-unused-vars": ["error"],
 		"eqeqeq": ["error", "always", { "null": "ignore" }],
 		"no-alert": "warn",
 		"no-console": "warn",
+		"@typescript-eslint/ban-types": "off",
+		"@typescript-eslint/no-explicit-any": ["error", { "ignoreRestArgs": true }],
+		"@typescript-eslint/no-extra-parens": ["error"],
+		"@typescript-eslint/no-misused-promises": ["error"],
+		"@typescript-eslint/no-shadow": ["error"],
+		"@typescript-eslint/no-unused-vars": ["error"],
+		"@typescript-eslint/semi": ["error"],
   	"@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }],
 
 		// STYLE OPTIONS
@@ -51,6 +53,7 @@
 		"array-bracket-spacing": ["error", "never"],
 		"eol-last": ["error", "always"],
 		"linebreak-style": ["error", "windows"],
+		"max-len": ["error", { "code": 120, "tabWidth": 2 }],
 		"no-lonely-if": "error",
 		"no-mixed-spaces-and-tabs": "error",
 		"no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 0 }],
@@ -129,24 +132,14 @@
 				"format": ["PascalCase"]
 			}
 		],
-		
-		
-		"max-len": ["error", { "code": 120, "tabWidth": 2 }],
 		"@typescript-eslint/quotes": ["error", "single", { "avoidEscape": true }],
-		
 		"@typescript-eslint/object-curly-spacing": ["error"]
 		// "max-len": ["error", { "code": 120, "tabWidth": 2 }],
 		// "class-methods-use-this": ["error", "never"],
 		// "lines-between-class-members": ["error", "never"],
-		// "quotes": ["error", "single"],
-		// 
-		// "comma-dangle": ["error", "never"],
-		// "no-tabs": 0,
+	
 		// "indent": ["error", "tab"],
-		// "no-shadow": "off",
-		// "@typescript-eslint/no-shadow": ["error"],
-		// "no-unused-vars": "off",
-		// "@typescript-eslint/no-unused-vars": ["error"],
+
 		// "no-useless-constructor": "off",
 		// "@typescript-eslint/no-useless-constructor": ["error"],
 	}
