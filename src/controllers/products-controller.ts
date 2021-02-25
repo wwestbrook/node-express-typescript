@@ -18,6 +18,6 @@ export function getAddProduct(req: Request, res: Response, next: NextFunction): 
 }
 
 export function postAddProduct(req: Request, res: Response, next: NextFunction): void {
-	service.add(new Product(req.body.title, +req.body.price, req.body.description, req.body.imgUrl));
+	service.add(new Product(+req.body.id, req.body.title, +req.body.price, req.body.description, req.body.imgUrl));
 	res.redirect('/');
 }

@@ -20,8 +20,8 @@ export function get(callback: Function): ProductModel[] {
   fs.readFile(p, (error, data) => {
     if (!error) {
       const jsonProducts = JSON.parse(data.toString());
-      jsonProducts.forEach((x: { title: string; price: number; description: string; imgUrl: string; }) => {
-        products.push(new ProductModel(x.title, x.price, x.description, x.imgUrl));
+      jsonProducts.forEach((x: { id:number, title: string; price: number; description: string; imgUrl: string; }) => {
+        products.push(new ProductModel(x.id, x.title, x.price, x.description, x.imgUrl));
       });
       console.log('inside, should be first');
     } else {
