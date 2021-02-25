@@ -4,7 +4,7 @@ import * as service from '../services/product-service';
 
 export function getProductList(req: Request, res: Response): void {
 	service.get((data: Product[]) => {
-		res.render('item-list', {
+		res.render('shop/item-list', {
 			pageTitle: 'List of Items',
 			products: data,
 			listItemClass: 'active',
@@ -14,7 +14,7 @@ export function getProductList(req: Request, res: Response): void {
 }
 
 export function getAddProduct(req: Request, res: Response): void {
-	res.render('add-item', {pageTitle: 'Add an Item', addItemClass: 'active', listItemClass: ''});
+	res.render('admin/add-item', {pageTitle: 'Add an Item', addItemClass: 'active', listItemClass: ''});
 }
 
 export function postAddProduct(req: Request, res: Response): void {
