@@ -1,8 +1,11 @@
 <header class="main-header">
   <nav class="main-header__nav">
     <ul class="main-header__item-list">
-      <li class="main-header__item"><a href="/" class="<%= listItemClass  %> ">Items</a></li>
-      <li class="main-header__item"><a href="/admin/add-item" class="<%= addItemClass  %>">Add an Item</a></li>
+      <li class="main-header__item"><a href="/" class="<%= menuClass === '!product-list' ? 'active' : ''  %> ">Home</a></li>
+      <li class="main-header__item"><a href="/products" class="<%= menuClass === 'product-list' ? 'active' : ''  %> ">Items</a></li>
+      <li class="main-header__item"><a href="/cart" class="<%= menuClass === 'cart' ? 'cart' : ''  %> ">Cart</a></li>
+      <li class="main-header__item"><a href="/admin/add-item" class="<%= menuClass === 'add-item' ? 'active' : ''  %>">Admin - Add Item</a></li>
+      <li class="main-header__item"><a href="/admin/item-list" >Admin - Item List</a></li>
     </ul>
   </nav>
 </header>

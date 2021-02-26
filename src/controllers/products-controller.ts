@@ -7,14 +7,13 @@ export function getProductList(req: Request, res: Response): void {
 		res.render('shop/item-list', {
 			pageTitle: 'List of Items',
 			products: data,
-			listItemClass: 'active',
-			addItemClass: ''
+			menuClass: 'product-list'
 		});
 	});
 }
 
 export function getAddProduct(req: Request, res: Response): void {
-	res.render('admin/add-item', {pageTitle: 'Add an Item', addItemClass: 'active', listItemClass: ''});
+	res.render('admin/add-item', {pageTitle: 'Add an Item', menuClass: 'add-item'});
 }
 
 export function postAddProduct(req: Request, res: Response): void {
