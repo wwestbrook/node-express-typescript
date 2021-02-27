@@ -1,7 +1,8 @@
-<%- include('../_partials/doc-header.ejs') %>
-<%- include('../_partials/menu.ejs') %> 
+<%- include('../../_partials/doc-header.ejs') %>
+<%- include('../../_partials/nav.ejs') %>
+<header><h2><%= pageTitle %></h2></header>
 <main>
-	<form class="product-form" action="/admin/add-item" method="POST">
+	<form class="product-form" action="/admin/products/add-item" method="POST">
 		<div class="form-control">
 			<label for="id">Id</label>
 			<input type="number" name="id" id="id" />
@@ -25,4 +26,4 @@
 		<button type="submit" class="btn">Add Item</button>
 	</form>
 </main>
-<%- include('../_partials/doc-end.ejs') %>
+<%- include('../../_partials/doc-end.ejs') %>

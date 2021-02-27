@@ -1,0 +1,19 @@
+<header class="main-header">
+	<nav class="main-header__nav">
+		<ul class="main-header__item-list">
+			<li class="main-header__item">
+				<a href="/" class="<%= menuClass === 'home' ? 'active' : '' %>">Home</a>
+			</li>
+			<li class="main-header__item">
+				<a href="/shop" class="<%= menuClass === 'shop' ? 'active' : '' %>">Shop</a>
+			</li>
+			<li class="main-header__item"><a href="/shop/cart" class="<%= menuClass === 'cart' ? 'active' : '' %>">Cart</a></li>
+			<li class="main-header__item">
+				<a href="/admin/products/add-item" class="<%= menuClass === 'admin/add-item' ? 'active' : '' %>">Admin/Add Item</a>
+			</li>
+			<li class="main-header__item">
+				<a href="/admin/products/" class="<%= menuClass === 'admin/products' ? 'active' : '' %>">Admin/Item List</a>
+			</li>
+		</ul>
+	</nav>
+</header>

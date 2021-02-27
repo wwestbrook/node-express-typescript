@@ -2,12 +2,16 @@ import * as service from '../services/product-service';
 import { Request, Response } from 'express';
 import Product from '../models/product';
 
-export function getProductList(req: Request, res: Response): void {
+export function get(req: Request, res: Response): void {
 	service.get((data: Product[]) => {
-		res.render('shop/item-list', {
-			pageTitle: 'List of Items',
+		res.render('shop/index', {
+			pageTitle: 'Products',
 			products: data,
-			menuClass: 'product-list'
+			menuClass: 'shop'
 		});
 	});
+}
+
+export function getById(req: Request, res: Response): void {
+	res.render('shop/product-detail', { pageTitle: 'Product Detail', menuClass: '' });
 }

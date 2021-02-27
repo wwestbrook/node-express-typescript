@@ -49,7 +49,7 @@ module.exports = {
 		// TYPESCRIPT RULES
 		eqeqeq: ['error', 'always', { null: 'ignore' }],
 		'no-alert': 'warn',
-		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'@typescript-eslint/ban-types': 'off',
 		'@typescript-eslint/no-explicit-any': ['error', { ignoreRestArgs: true }],
