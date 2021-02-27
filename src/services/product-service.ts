@@ -1,12 +1,12 @@
 import * as fs from 'fs';
-import path from 'path';
 import ProductModel from '../models/product';
+import path from 'path';
 
 export function add(item: ProductModel): void {
 	readFile((products: ProductModel[]) => {
 		products.push(item);
 		const p = path.join(path.dirname(getPath()), '..', 'src', 'data', 'products.json');
-		fs.writeFile(p, JSON.stringify(products), (error) => {
+		fs.writeFile(p, JSON.stringify(products), error => {
 			console.log(error);
 		});
 	});
@@ -21,7 +21,7 @@ function readFile(callback: Function): ProductModel[] {
 	fs.readFile(p, (error, data) => {
 		if (!error) {
 			const jsonProducts = JSON.parse(data.toString());
-			jsonProducts.forEach((x: {id:number, title: string; price: number; description: string; imgUrl: string}) => {
+			jsonProducts.forEach((x: { id: number; title: string; price: number; description: string; imgUrl: string }) => {
 				products.push(new ProductModel(x.id, x.title, x.price, x.description, x.imgUrl));
 			});
 		} else {

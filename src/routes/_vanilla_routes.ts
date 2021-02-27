@@ -3,7 +3,7 @@ import * as http from 'http';
 
 // eslint-disable-next-line max-len
 const requestHandler = (req: http.IncomingMessage, res: http.ServerResponse): void | http.IncomingMessage => {
-	const {url, method} = req;
+	const { url, method } = req;
 	if (url === '/') {
 		res.write('<html>');
 		res.write('<head><title>Input Page</title></head>');
@@ -17,13 +17,13 @@ const requestHandler = (req: http.IncomingMessage, res: http.ServerResponse): vo
 
 	const body: Uint8Array[] = [];
 	if (url === '/message' && method === 'POST') {
-		req.on('data', (chunk) => {
+		req.on('data', chunk => {
 			// console.log(chunk);
 			body.push(chunk);
 		});
 		return req.on('end', () => {
 			const parsedBody = Buffer.concat(body).toString();
-			fs.writeFile('_message.txt', parsedBody.split('=')[1], (error) => {
+			fs.writeFile('_message.txt', parsedBody.split('=')[1], error => {
 				if (error) {
 					// eslint-disable-next-line no-console
 					console.log(error);
