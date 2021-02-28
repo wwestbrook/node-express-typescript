@@ -14,13 +14,16 @@
           <p class="product__description"><%= product.description %></p>
         </div>
         <div class="card__actions">
+          <!-- Shop View-->
           <% if (!isAdmin) { %>
-            <form action="<%= `/shop/add-to-cart&id=${product.id}` %>" method="POST">
+            <a class="btn" href="<%=`/shop/details/${product.id}` %>">Details</a>
+            <form action="<%= `/shop/add-to-cart/${product.id}` %>" method="POST">
               <button class="btn" type="submit">Add to Cart</button>
             </form>
+          <!-- Admin View-->
           <% } else { %>
-            <button class="btn"><a href="<%=`/admin/products/edit-item&id=${product.id}` %>">Edit</a></button>
-            <form action="<%= `/admin/products/delete&id=${product.id}` %>" method="POST">
+            <a class="btn" href="<%=`/admin/products/edit-item/${product.id}` %>">Edit</a>
+            <form action="<%= `/admin/products/delete/${product.id}` %>" method="POST">
               <button class="btn" type="submit">Delete</button>
             </form>
           <% } %> 

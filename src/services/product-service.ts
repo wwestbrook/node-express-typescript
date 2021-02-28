@@ -4,6 +4,7 @@ import path from 'path';
 
 export function add(item: ProductModel): void {
 	readFile((products: ProductModel[]) => {
+		item.id = Math.random();
 		products.push(item);
 		const p = path.join(path.dirname(getPath()), '..', 'src', 'data', 'products.json');
 		fs.writeFile(p, JSON.stringify(products), error => {
@@ -13,6 +14,18 @@ export function add(item: ProductModel): void {
 }
 export function get(callback: Function): ProductModel[] {
 	return readFile(callback);
+}
+
+export function getById(id: number, callback: Function):  {
+	return find(id, callback);
+}
+
+function find(id: number, callback: Function): ProductModel | undefined {
+	readFile((products: ProductModel[]) => {
+		const product = products.find(x => x.id === id);
+		callback(product);
+		return product;
+	});
 }
 
 function readFile(callback: Function): ProductModel[] {

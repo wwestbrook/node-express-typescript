@@ -14,5 +14,7 @@ export function get(req: Request, res: Response): void {
 }
 
 export function getById(req: Request, res: Response): void {
-	res.render('shop/product-detail', { pageTitle: 'Product Detail', menuClass: '' });
+	const id = +req.params.id;
+	console.log(id);
+	res.render('shop/details', { pageTitle: 'Product Detail', menuClass: '' });
 }
