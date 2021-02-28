@@ -7,7 +7,8 @@ export function get(req: Request, res: Response): void {
 		res.render('shop/index', {
 			pageTitle: 'Products',
 			products: data,
-			menuClass: 'shop'
+			menuClass: 'shop',
+			isAdmin: false
 		});
 	});
 }

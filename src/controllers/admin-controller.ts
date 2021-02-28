@@ -7,7 +7,8 @@ export function getProductList(req: Request, res: Response): void {
 		res.render('admin/products/index', {
 			pageTitle: 'Admin - Item List',
 			products: data,
-			menuClass: 'admin/products'
+			menuClass: 'admin/products',
+			isAdmin: true
 		});
 	});
 }
@@ -17,6 +18,8 @@ export function getAddProduct(req: Request, res: Response): void {
 }
 
 export function getEditProduct(req: Request, res: Response): void {
+	const id = req.params['id'].valueOf();
+	console.log(id);
 	res.render('admin/products/edit-item', { pageTitle: 'Admin - Edit an Item', menuClass: '' });
 }
 

@@ -65,6 +65,7 @@ header {
 
 .card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin-bottom: 1rem;
 }
 
 .card__header,
@@ -104,6 +105,14 @@ header {
   background: white;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.btn a {
+  text-decoration: none;
+}
+
+.btn a:visited {
+  color: inherit;
 }
 
 .btn:hover,
