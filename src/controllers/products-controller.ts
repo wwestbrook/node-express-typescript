@@ -15,6 +15,13 @@ export function get(req: Request, res: Response): void {
 
 export function getById(req: Request, res: Response): void {
 	const id = +req.params.id;
-	console.log(id);
-	res.render('shop/details', { pageTitle: 'Product Detail', menuClass: '' });
+	service.getById(id, (product: Product | undefined) => {
+		res.render('shop/details', {
+			pageTitle: 'Product Detail',
+			menuClass: 'shop/details',
+			product
+		});
+	});
+	// console.log(id);
+	// res.render('shop/details', { pageTitle: 'Product Detail', menuClass: '' });
 }
