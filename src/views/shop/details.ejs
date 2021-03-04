@@ -1,7 +1,23 @@
-<%- include('../_partials/doc-header.ejs') %>
-<%- include('../_partials/nav.ejs') %> 
+<%- include('../_partials/doc-header.ejs') %> <%- include('../_partials/nav.ejs') %>
 <header><h2><%= pageTitle %></h2></header>
 <main>
-  <%= product.title %>
+	<input type="hidden" value="<%= product.id %>" />
+	<article class="card product-item">
+		<header class="card__header">
+			<h1 class="product__title"><%= product.title %></h1>
+		</header>
+		<div class="card__image">
+			<img src="<%= product.imgUrl %>" />
+		</div>
+		<div class="card__content">
+			<h2 class="product__price">$ <%= product.price %></h2>
+			<p class="product__description"><%= product.description %></p>
+		</div>
+		<div class="card__actions">
+			<form action="<%= `/shop/add-to-cart/${product.id}` %>" method="POST">
+				<button class="btn" type="submit">Add to Cart</button>
+			</form>
+		</div>
+	</article>
 </main>
 <%- include('../_partials/doc-end.ejs') %>
